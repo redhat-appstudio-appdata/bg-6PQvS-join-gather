@@ -1,0 +1,23 @@
+apiVersion: route.openshift.io/v1
+kind: Route
+metadata:
+  creationTimestamp: null
+  labels:
+    app.kubernetes.io/created-by: application-service
+    app.kubernetes.io/instance: basic-go-as-other-xqnl
+    app.kubernetes.io/managed-by: kustomize
+    app.kubernetes.io/name: basic-go-as-other-xqnl
+    app.kubernetes.io/part-of: bg
+  name: basic-go-as-other-xqnl
+  namespace: pmacik-tenant
+spec:
+  port:
+    targetPort: 8080
+  tls:
+    insecureEdgeTerminationPolicy: Redirect
+    termination: edge
+  to:
+    kind: Service
+    name: basic-go-as-other-xqnl
+    weight: 100
+status: {}
